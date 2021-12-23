@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
        _counter--;
      });
    }
-    var activeCardColor = Color(0xFF155328);
+    var activeCardColor = Colors.amber;
   var inActiveCardColor = Color(0xFF272B4E);
 
   var maleCardColor = Color(0xFF272B4E);
@@ -109,8 +109,33 @@ class _MyAppState extends State<MyApp> {
         
         ),
         Expanded(child: Row(children: [
-          Expanded(child: Container(color: Colors.orange,)),
-          Expanded(child: Container(color: Colors.white,)),
+          Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateColor(1);
+                        });
+                      },
+                      child: Container(
+                        color: maleCardColor,
+                        
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateColor(2);
+                        });
+                      },
+                      child: Container(
+                        color: femaleCardColor,
+                        
+                      ),
+                    ),
+                  ),
+         
         ],
         ),
         
